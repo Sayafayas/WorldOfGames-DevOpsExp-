@@ -6,7 +6,7 @@ env:
 on: 
   push:
     branches: 
-      - master
+      - main
 
 jobs:
   my_testing:
@@ -22,6 +22,9 @@ jobs:
           echo "Hello Message2"
           echo "Printing Global ENV variable ${{ env.DEPLOY_PACKAGE_NAME }}"
 
+      - name: List current folder
+        run : ls -la
+        
       - name: Git clone my repo
         uses: actions/checkout@v1
         
